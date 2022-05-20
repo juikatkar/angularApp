@@ -1,0 +1,19 @@
+<div class="container-fluid">
+		<div class="app text-center text-primary">
+			<header>
+				<h1>Today's Meetings</h1>
+			</header>
+		</div>
+		<div>
+			<form (submit)="addMeeting()">
+				<input type="text" name="inputMeeting" placeholder="Enter Meeting..." class="meeting-input" [(ngModel)]="inputMeeting" />
+				<input type="submit" value="Add Meeting" class="meeting-submit btn" />
+			</form>
+			<div *ngFor="let meeting of meetings; let i = index;" class="meeting {{ (meeting.completed ? 'done' : '') }}">
+				<div class="id">{{ i }}</div>
+				<div class="content" (click)="toggleDone(i)">{{ meeting.content }}</div>
+				<button class="delete btn btn-primary" (click)="deleteMeeting(i)">Remove</button>
+			</div>
+		</div>
+	</div>
+	

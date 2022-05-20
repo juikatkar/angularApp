@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thcolor">
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of empdata">
+                <td>{{data.id}}</td>
+                <td>{{data.firstName}}</td>
+                <td>{{data.lastName}}</td>
+                <td>{{data.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
